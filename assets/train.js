@@ -16,12 +16,14 @@
   var name = "";
   var destination = "";
   var traintime = "";
-  var randomFormat = "HH:mm:ss";
+  var randomFormat = "HH:mm";
   var convertedDate = moment(traintime, randomFormat);
   var frequency = ""
 
   //Time difference calculation
 var minutesAway =  moment(convertedDate).diff(moment(), "minutes");
+console.log(moment(convertedDate).format("HH:mm"));
+console.log(minutesAway);
 
 
 
@@ -38,29 +40,87 @@ $("#submit-bid").on("click", function() {
     traintime = $("#first-train").val().trim();
     frequency = $("#frequency").val().trim();
 
+    var convertedDate = moment(traintime, randomFormat);
+
+    console.log(convertedDate);
+
+    //Conduct calculations for the next arrival time and the time until the arrival
+
+    var currentTime = moment();
+
+    console.log(currentTime)
+
+    console.log("Current Time :" + moment(currentTime).format("hh:mm"));
+
+
+  
+
+
+    var diffTime = moment().diff(moment(convertedDate),"minutes")
+
+    console.log("Difference in Time " + diffTime);
+
+    //Time Apart (remainder)
+    var tRemainder = diffTime % frequency;
+
+    console.log(tRemainder)
+    
+    // Minute Until Train
+
+    var tMinutesTillTrain = frequency - tRemainder;
+    console.log("Minutes Till Train: " + tMinutesTillTrain);
+
+    //Minutes until the next train
+    var nextTrain = moment().add(tMinutesTillTrain, "minutes");
+
+    // console.log(nextTrain);
+    // console.log(moment(nextTrain).format("hh:mm"));
+
+    //the next train after the beginning time
+    var nextTime = moment(nextTrain).format("hh:mm")
+
+
     database.ref().push({
       name: name,
       destination: destination,
       traintime: traintime,
-      frequency: frequency
+      frequency: frequency,
+      nextTrain: tMinutesTillTrain,
+      minutesAway: diffTime,
+      nextTime: nextTime
+
     });
 
+    $()
+//Clear the values in the submit form
+    $('input').val('');
+
   });
 
-  // Firebase watcher + initial loader HINT: .on("value")
-  database.ref().on("value", function(snapshot) {
+    // Firebase watcher + initial loader HINT: This code behaves similarly to .on("value")
+    database.ref().on("child_added", function(childSnapshot) {
 
-    // Log everything that's coming out of snapshot
-    console.log(snapshot.val());
-    console.log(snapshot.val().name);
-    console.log(snapshot.val().destination);
-    console.log(snapshot.val().traintime);
-    console.log(snapshot.val().frequency);
+        // Log everything that's coming out of snapshot
+        console.log(childSnapshot.val().name);
+        console.log(childSnapshot.val().destination);
+        console.log(childSnapshot.val().traintime);
+        console.log(childSnapshot.val().frequency);
+        console.log(childSnapshot.val().nextTime);
+        console.log(childSnapshot.val().minutesAway);
+        console.log(childSnapshot.val().nextTrain);
 
-    // Change the HTML to reflect
+        // full list of items to the well
+      $("#new-train").append("<div class='well'><span class='member-name'> " + childSnapshot.val().name + "</div>");
+      $("#new-des").append("<div class='well'><span class='member-name'> " + childSnapshot.val().destination + "</div>");
+      $("#new-freq").append("<div class='well'><span class='member-name'> " + childSnapshot.val().frequency + "</div>");
+      $("#new-arrival").append("<div class='well'><span class='member-name'> " + childSnapshot.val().traintime + "</div>");
+      $("#new-min").append("<div class='well'><span class='member-name'> " + childSnapshot.val().minutesAway + "</div>");
+      $("#new-following").append("<div class='well'><span class='member-name'> " + childSnapshot.val().nextTime + "</div>");
+
   
-
-    // Handle the errors
-  }, function(errorObject) {
+      // Handle the errors
+      }, function(errorObject) {
     console.log("Errors handled: " + errorObject.code);
   });
+//Append to the HTML
+  
