@@ -81,6 +81,7 @@ $("#submit-bid").on("click", function() {
 
 
     database.ref().push({
+
       name: name,
       destination: destination,
       traintime: traintime,
@@ -98,7 +99,9 @@ $("#submit-bid").on("click", function() {
   });
 
     // Firebase watcher + initial loader HINT: This code behaves similarly to .on("value")
-    database.ref().on("child_added", function(childSnapshot) {
+    database.ref().on("child_added", function(childSnapshot, prevChildKey) {
+
+        
 
         // Log everything that's coming out of snapshot
         console.log(childSnapshot.val().name);
@@ -109,18 +112,16 @@ $("#submit-bid").on("click", function() {
         console.log(childSnapshot.val().minutesAway);
         console.log(childSnapshot.val().nextTrain);
 
-        // full list of items to the well
-      $("#new-train").append("<div class='well'><span class='member-name'> " + childSnapshot.val().name + "</div>");
+        // Append all the items to the train list
+      $("#new-train").append("<div class='well'> " + childSnapshot.val().name + "</div>");
       $("#new-des").append("<div class='well'><span class='member-name'> " + childSnapshot.val().destination + "</div>");
       $("#new-freq").append("<div class='well'><span class='member-name'> " + childSnapshot.val().frequency + "</div>");
       $("#new-arrival").append("<div class='well'><span class='member-name'> " + childSnapshot.val().traintime + "</div>");
-      $("#new-min").append("<div class='well'><span class='member-name'> " + childSnapshot.val().minutesAway + "</div>");
-      $("#new-following").append("<div class='well'><span class='member-name'> " + childSnapshot.val().nextTime + "</div>");
+      $("#new-min").append("<div class='well'><span class='member-name'> " + ((childSnapshot.val().minutesAway) * -1) + "</div>");
 
   
       // Handle the errors
       }, function(errorObject) {
     console.log("Errors handled: " + errorObject.code);
   });
-//Append to the HTML
   
