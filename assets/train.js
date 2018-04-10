@@ -1,3 +1,7 @@
+//interval id
+
+var intervalId;
+
 // Initialize Firebase
   var config = {
     apiKey: "AIzaSyCnFnzZ1FaKZXfU1zxKasTfWFIuDnHxZXk",
@@ -31,6 +35,8 @@ console.log(minutesAway);
 $("#submit-bid").on("click", function() {
     // Don't refresh the page!
     event.preventDefault();
+
+
 
     // YOUR TASK!!!
     // Code in the logic for storing and retrieving the most recent user.
@@ -78,6 +84,7 @@ $("#submit-bid").on("click", function() {
 
     //the next train after the beginning time
     var nextTime = moment(nextTrain).format("hh:mm")
+    
 
 
     database.ref().push({
@@ -101,7 +108,7 @@ $("#submit-bid").on("click", function() {
     // Firebase watcher + initial loader HINT: This code behaves similarly to .on("value")
     database.ref().on("child_added", function(childSnapshot, prevChildKey) {
 
-        
+
 
         // Log everything that's coming out of snapshot
         console.log(childSnapshot.val().name);
@@ -125,3 +132,17 @@ $("#submit-bid").on("click", function() {
     console.log("Errors handled: " + errorObject.code);
   });
   
+  function decrement() {
+
+    //  Decrease number by one.
+    minutesAway--;
+
+    }
+
+    function run() {
+        clearInterval(intervalId);
+        intervalId = setInterval(decrement, 60000);
+        console.log(minutesAway);
+      }
+
+      run();
