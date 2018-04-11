@@ -2,6 +2,11 @@
 
 var intervalId;
 
+//Defining the variable that will decrease the minutes away
+
+var timer;
+var diffTime;
+
 // Initialize Firebase
   var config = {
     apiKey: "AIzaSyCnFnzZ1FaKZXfU1zxKasTfWFIuDnHxZXk",
@@ -27,7 +32,6 @@ var intervalId;
   //Time difference calculation
 var minutesAway =  moment(convertedDate).diff(moment(), "minutes");
 console.log(moment(convertedDate).format("HH:mm"));
-console.log(minutesAway);
 
 
 
@@ -62,7 +66,9 @@ $("#submit-bid").on("click", function() {
   
 
 
-    var diffTime = moment().diff(moment(convertedDate),"minutes")
+      diffTime = moment().diff(moment(convertedDate),"minutes")
+
+
 
     console.log("Difference in Time " + diffTime);
 
@@ -97,13 +103,66 @@ $("#submit-bid").on("click", function() {
       minutesAway: diffTime,
       nextTime: nextTime
 
+
     });
 
-    $()
+  
+    timer = diffTime;
 //Clear the values in the submit form
     $('input').val('');
 
+    // var ref = firebase.database().ref().child("alex-s-first-project/minutesAway");
+    // var obj = (2);
+  
+    // ref.update(obj);
+
+    var ref = firebase.database().ref();
+        ref.child("/alex-s-first-project/").orderByChild("minutesAway").equalTo(minutesAway).once("value", function(snapshot) {
+        snapshot.forEach(function(child) {
+        child.ref.update(obj);
+    });
+});
+
   });
+
+
+
+
+  
+
+//   //  The stop function
+//   function stop() {
+
+//     //  Clears our intervalId
+//     //  We just pass the name of the interval
+//     //  to the clearInterval function.
+//     clearInterval(intervalId);
+//   }
+
+//   //The run functions sets an interval, clearing the intervalID prior to our new interval will not allow multiple instances
+// function run() {
+//     clearInterval(intervalId);
+//     intervalId = setInterval(decrement, 1000);
+//   }
+
+// //Set the timer to start decrementing (Function 1)
+// function decrement() {
+
+//     timer--;
+
+//     console.log(timer);
+    
+//     if (timer === 0) {
+        
+
+//         //  ...run the stop function.
+//         stop();
+
+//       }
+
+//     };
+
+    
 
     // Firebase watcher + initial loader HINT: This code behaves similarly to .on("value")
     database.ref().on("child_added", function(childSnapshot, prevChildKey) {
@@ -131,18 +190,14 @@ $("#submit-bid").on("click", function() {
       }, function(errorObject) {
     console.log("Errors handled: " + errorObject.code);
   });
+
+//   decrement();
+
+//     run();
   
-  function decrement() {
 
-    //  Decrease number by one.
-    minutesAway--;
 
-    }
 
-    function run() {
-        clearInterval(intervalId);
-        intervalId = setInterval(decrement, 60000);
-        console.log(minutesAway);
-      }
-
-      run();
+//Problems:
+//Need to decrement the minutes remaining 
+//need to set the next arrival after the time has been reached
