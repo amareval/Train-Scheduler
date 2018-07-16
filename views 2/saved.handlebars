@@ -1,0 +1,63 @@
+<header class=" black-80 tc pv2 avenir">
+
+	<nav class=" tc center navbar navbar-default navbar-fixed-top" id="myScrollspy">
+        <div class="navbar-collapse collapse">
+            <a class="f6 f7-l link bg-animate black-80 hover-bg-black dib  ph4-l fl" href="/">CANVAS</a>
+            <a class="f6 f7-l link bg-animate black-80 hover-bg-black dib  ph4-l" href="/">home</a>
+            <a class="f6 f7-l link bg-animate black-80 hover-bg-black dib  ph4-l" href="/users">drink makers</a>
+            <a class="f6 f7-l link bg-animate black-80 hover-bg-black dib  ph4-l" href="/projects">projects</a>
+            <a class="f6 f7-l link bg-animate black-80 hover-bg-black dib  ph4-l" href="#">about</a>
+            <a class="f6 f7-l link bg-animate black-80 hover-bg-black dib  ph4-l" href="#">contact</a>
+
+            {{> login-modal }}
+        </div>
+    </nav>
+
+</header>
+
+
+<div class="all-projects-stats">
+    <p>Explore Projects</p>
+</div>
+
+
+<div class="container all-projects-container">
+    <div class="projects">
+
+
+{{#each dbProject}}
+
+	<article class=" bg-white pa3 b--black-10 project-card">
+
+            <div class="tc project-portfolio">
+                <div class="img-top hide-child dim">
+                    <a href="/project/{{id}}">
+                        <img src="{{this.image_url}}" class="dt db project-drink">
+                        <span class="f6 ph3 pv2 mb2 black child bg-white" id="view-project-btn">VIEW PROJECT</span>
+                    </a>
+                </div>
+
+                <img src="{{this.User.image_url}}" class="br-100 h3 w3 project-user grow">
+
+                <h1 class="f4">{{this.project_name}}</h1>
+                {{!-- <h4 class="f5">DRNX-MKR : <a href="/user/{{this.User.id}}">{{this.User.name}}</a></h4> --}}
+                <h4 class="f5">DRNX-MKR : {{this.User.name}}</h4>
+
+                <hr class="mw7 bb b--black-10">
+            </div>
+
+            <p class="lh-copy measure center f6 black-70 project-info">
+
+               {{this.description}}
+
+            </p>
+            
+
+
+        </article>
+{{/each}}
+
+	</div>
+
+
+</div>

@@ -1,0 +1,614 @@
+body {
+    /* background-image: url('../images/mixology-2.jpg'); */
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background: #f4f7f6;
+}
+
+
+.jumbotron {
+    background: white;
+    text-align: center;
+}
+
+/* HOME */
+
+header {
+    color: white;
+    /* background-color: rgb(245, 245, 245); */
+}
+
+.stats-header {
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.title-header {
+    padding: 5px 0px 10px 0px;
+    margin-top: 20px;
+}
+
+.title-header h2 {
+    font-size: 12px;
+}
+#canvas-title {
+    letter-spacing: 10px;
+    font-size: 56px;
+    color: linear-gradient(to right, rgb(0,0,0), rgb(102, 102, 102));
+    font-family: 'Futura';
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    /* background: white; */
+    background: #f4f7f6;
+    z-index: 100;
+    /* border-bottom: 1px solid lightgray; */
+}
+
+.navbar {
+	border-bottom: none;
+	padding: 10px 0;
+    transition-duration: 0.6s;
+    background: #f4f7f6;
+
+}
+
+.navbar-scroll {
+	background: #ffffff;
+	padding: 0;
+	box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
+	transition-duration: 0.6s;
+}
+.nav-dropdown-scroll {
+	background: #e7eaea;
+	box-shadow: 0px 10px 9px rgba(0, 0, 0, 0.4);
+}
+
+nav a {
+    padding: 20px 7px;
+    letter-spacing: 1px;
+    font: 400 12px 'Futura' !important;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+nav a:active {
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+
+
+.pts {
+    margin: 150px 0px;
+    /* background: rgb(241, 241, 241); */
+    max-width: 100%;
+    clear: both;
+    overflow: hidden;
+    padding: 100px 0px;
+}
+
+.pts-img {
+    float: left;
+    margin-left: 175px;
+    width: 400px;
+    height: 350px;
+    box-shadow: 0 7px 8px -2px gray;
+}
+
+.pts h3 {
+    margin-bottom: 30px;
+}
+
+.pts-info {
+    width: 50%;
+    float: right;
+    margin-right: 175px;
+}
+
+
+.jumbotron p {
+    font-size: 14px;
+}
+
+/* ----------- ALL PROJECTS ------------ */
+
+.all-projects-container {
+    /* border: 1px solid red; */
+    width: 1500px;
+    margin-top: 0px;
+}
+
+#projects-title,
+#featured-title {
+    letter-spacing: 3px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-align: center;
+    color: darkgray;
+}
+
+.all-projects-stats {
+    margin-top: 100px;
+    margin-left: 125px;
+}
+
+.all-projects-stats p {
+    display: inline-block;
+    font-size: 24px;
+    margin-right: 14px;
+    font-family: 'Roboto';
+    color: gray;
+    margin-left: -35px;
+    margin-top: 15px;
+    
+}
+
+.jumbotron-featured {
+    background: #f4f7f6;
+}
+
+.projects {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /* width: 90%; */
+    margin: 0 auto;
+    font-family: 'Futura';
+}
+
+.projects article {
+    width: 325px;
+    /* height: 450px; */
+    /* border: 3px solid rgb(241, 241, 241); */
+    /* background: linear-gradient(to top, rgb(110, 110, 110), rgb(255, 255, 255)); */
+}
+
+/* .project-card {
+    padding: 0px;
+} */
+
+.img-top {
+   position: relative;
+   overflow: hidden;
+   box-shadow: 2px 5px 10px -1px lightgray;
+   background: #f4f7f6;
+
+}
+
+.project-drink {
+    /* width: 70%; */
+    height:200px;
+    margin-left: auto;
+    margin-right: auto;
+  
+    -moz-transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.project-drink:hover {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+
+.project-portfolio h1 {
+    margin-top: 26px;
+    font-size: 20px;
+    color: rgb(44, 44, 44);
+    font-family: 'Futura' !important;
+}
+
+.project-portfolio h4 {
+    margin-top: -10px;
+}
+
+.project-card {
+    position: relative;
+    height: 450px;
+    margin-bottom: 40px;
+    /* box-shadow: 0 7px 8px -2px gray; */
+}
+
+.project-drink {
+    box-shadow: 0 7px 8px -2px gray;
+}
+
+.project-user {
+    position: absolute;
+    right: 10px;
+    top: 175px;
+    border: 2px solid white;
+}
+
+.project-card span {
+    position: absolute;
+    /* bottom: 10px;
+    right: 20px; */
+    top: 80px;
+    left: 70px;
+    letter-spacing: 2px;
+}
+
+/* .project-card button:hover {
+    text-decoration: none;
+    color: black;
+    box-shadow: 0 7px 8px -2px lightgray;
+} */
+
+
+
+/* -------- EACH PROJECT ----------- */
+
+
+.project-content {
+    min-height: calc(100vh - 296px);
+    position: relative;
+    margin-top: 75px;
+    /* background: url('../images/distellery-banner-1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center; */
+}
+
+#project-img {
+    box-shadow: 0 7px 8px -2px gray;
+    max-width: 375px;
+}
+
+
+#project-title {
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 36px;
+    font-weight: 400;
+    font-family: 'Futura';
+}
+
+#project-info{
+    text-align: left;
+    clear: both;
+    overflow: hidden;
+}
+
+/* #project-info {
+    border: 1px solid red;
+} */
+
+#project-info li {
+    list-style-type: square;
+}
+
+.project-container {
+    text-align: center;
+    font-family: 'Helvetica Neue' !important;
+    margin-top: 0px;
+}
+
+.project-container h1 {
+    margin-bottom: 30px;
+
+}
+.project-container p {
+    line-height: 10px;
+    text-align: left;
+}
+
+#project-info p {
+    margin-top: 20px;
+}
+
+.project-description {
+    line-height: 1.5;
+    margin-top: 0px;
+    margin-bottom: 40px;
+    text-align: left;
+    font-style: italic;
+}
+
+#project-stats {
+    text-align: center;
+    padding-top: 100px;
+    font: 16px 'Futura';
+}
+#project-raised,
+#project-goal,
+#project-percent {
+    text-align: center;
+    margin: 20px;
+    letter-spacing: 2px;
+    padding: 50px;
+}
+
+#user-name {
+    text-transform: uppercase;
+}
+
+#back-btn {
+    letter-spacing: 1px;
+    padding: 10px 75px;
+    background: black;
+    color: white;
+    font-family: 'Futura';
+    margin-top: 10px;
+    
+}
+
+#back-btn:hover {
+    text-decoration: none;
+}
+
+#comments {
+    position: absolute;
+    right: 0px;
+    top: 75px;
+    width: 350px;
+    height: 700px;
+    border: 1px solid grey;
+    /* box-shadow: -1px 3px 4px -1px gray; */
+    padding-top: 30px;
+    text-align: center;
+}
+#stars {
+    text-shadow: 0px 0px 1px black, 0px 0px 1px black;
+    color: white;  
+}
+
+.checked {
+    color: black;
+}
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    z-index: 99;
+    font-size: 14px;
+    font-family: 'Futura';
+    border: none;
+    outline: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    padding: 5px 35px;
+  }
+
+/* LOGIN MODAL */
+
+.modal-dialog {
+    padding: 20px;
+}
+
+.loginmodal-container h1 {
+    letter-spacing: 3px;
+}
+
+#username-form label,
+#password-form label {
+    letter-spacing: 3px;
+    padding-bottom: 10px;
+}
+
+.loginmodal-submit {
+    letter-spacing: 3px;
+}
+
+/* COMMENTS */
+#comments-div {
+    margin:  100px auto;
+    /* border: 1px solid red; */
+    width: 750px;
+    margin-bottom: 200px;
+}
+
+#comments-div h1 {
+    font-family: 'Futura';
+    letter-spacing: 0px;
+    font-size: 30px;
+}
+
+#stars {
+    margin-bottom: 5px;
+    float: left;
+}
+
+#reviews-link {
+    color: darkslategray;
+    float: right;
+    margin-right: 60px;
+}
+
+#reviews-link:hover {
+    text-decoration: none;
+    color: lightgray;
+}
+
+#comments-subject-display {
+    font-size: 22px;
+    font-style: italic;
+    font-family: 'Bodoni';
+}
+
+#comments-body-display {
+    font-size: 13px;
+}
+
+#comment-subject {
+    resize: none;
+    min-height: 12px;
+}
+
+#comment-body {
+    height: 100px;
+}
+
+#submit-comment {
+    margin-top: 20px;
+    float: right;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+#submit-comment:hover {
+    text-decoration: none;
+    color: white;
+}
+
+#add-comments textarea {
+    border-radius: 0px;
+}
+
+/* REGISTRATION */
+
+#registration-container {
+    background: red;
+}
+
+/* --------- ALL USERS ----------- */
+
+.all-users-container {
+    width: 1500px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.all-users-container h2 {
+    font-size: 24px;
+    font-family: 'Roboto';
+}
+
+.all-users-container a:hover {
+    text-decoration: none;
+}
+
+#nav-title-canvas {
+    letter-spacing: 5px;
+}
+
+.user-header {
+    letter-spacing: 2px;
+}
+
+
+
+/* --------- ALL USERS ----------- */
+.transaction-container {
+    margin-top: 55px;
+    font-family: 'Futura';
+    overflow: hidden;
+    clear: both;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+#transaction-amt {
+    border-radius: 0px;
+}
+
+#transaction-card {
+    width: 500px;
+    margin: 0 auto;
+    padding-bottom: 100px;
+    background: white;
+    /* box-shadow: 0 7px 8px -2px gray; */
+    box-shadow: 0px 7px 8px -1px lightgray;
+}
+
+.transaction-stats span {
+    margin-top: 0px;
+    padding: 15px;
+    letter-spacing: 1px;
+    font-size: 16px;
+}
+
+.transaction-container label {
+    letter-spacing: 1px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-family: 'Roboto';
+}
+
+.input-dollar {
+    position: relative;
+    background-color: #dedede;
+    display: inline;
+}
+
+.input-dollar:before {
+    content: '$';
+    color: gray;
+    position: absolute;
+    top: 0;
+    left: 15px;
+    z-index: 1;
+}    
+
+.transaction-container input {
+    font-family: 'Roboto';
+    letter-spacing: 1px;
+    display: inline-block;
+    /* float: left; */
+    width: 75%;
+    margin: 0 auto;
+    padding-left: 2.5em;
+    height: 40px;
+}
+
+.transaction-container input:focus {
+   box-shadow: none;
+   border: 1px solid lightgray;
+}
+
+.transaction-container button {
+    border: none;
+    padding: 7px 40px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.transaction-container button:hover {
+    background: black;
+}
+
+#transaction-project-amount,
+#transaction-project-goal {
+    color: rgb(28, 146, 121);
+}
+
+.transaction-project-name {
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 36px;
+    font-weight: 400;
+    font-family: 'Futura';
+    margin-bottom: 0px;
+}
+
+.transaction-user-name {
+    font-size: 15px;
+    letter-spacing: 0px;
+    margin-bottom: 40px;
+}
+

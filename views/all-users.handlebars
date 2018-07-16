@@ -1,0 +1,42 @@
+<header class=" black-80 tc pv2 avenir">
+
+    <nav class=" tc center navbar navbar-default navbar-fixed-top" id="myScrollspy">
+        <div class="navbar-collapse collapse">
+            <a class="f6 f7-l link bg-animate black-80 hover-bg-black dib  ph4-l fl" href="/">CANVAS</a>
+            <a class="f6 f7-l link bg-animate black-80 hover-bg-black dib  ph4-l" href="/">home</a>
+            <a class="f6 f7-l link bg-animate black-80 hover-bg-black dib  ph4-l" href="/users">drink makers</a>
+            <a class="f6 f7-l link bg-animate black-80 hover-bg-black dib  ph4-l" href="/projects" id="nav-projects">projects</a>
+            <a class="f6 f7-l link bg-animate black-80 hover-bg-black dib  ph4-l" href="#">about</a>
+            <a class="f6 f7-l link bg-animate black-80 hover-bg-black dib  ph4-l" href="#">contact</a>
+
+            {{> login-modal }}
+        </div>
+    </nav>
+
+</header>
+
+<div class="container all-users-container">
+    <article class="">
+        <h2 class="f3 fw4 pa3 mv0 gray">Explore Drink Makers</h2>
+        <div class="cf pa2">
+
+            {{#each dbUser}}
+
+                <div class="fl w-50 w-25-m w-10-l pa2">
+                    <a href="#" class="db link dim tc">
+                        <img src="{{image_url}}" alt="Frank Ocean Blonde Album Cover" class="br-100 h4 w4 db center black-10 br-100"/>
+                        <dl class="mt3 f6 lh-copy">
+                        <dt class="clip">Title</dt>
+                        <dd class="ml0 black truncate w-100">{{name}}</dd>
+                        <dt class="clip">Artist</dt>
+                        <dd class="ml0 gray truncate w-100">{{instagram_handle}}</dd>
+                        </dl>
+                    </a>
+                </div>
+
+            {{/each}}
+
+                   
+        </article>             
+    </div>
+</div>

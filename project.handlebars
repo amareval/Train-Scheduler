@@ -1,0 +1,117 @@
+<div class="project-content">
+    <header class=" black-80 tc pv2 avenir">
+
+    <nav class=" tc center navbar navbar-default navbar-fixed-top" id="myScrollspy">
+        <div class="navbar-collapse collapse">
+            <a class="f6 f7-l link bg-animate black-80 hover-bg-black dib  ph4-l fl" href="/">CANVAS</a>
+            <a class="f6 f7-l link bg-animate black-80 hover-bg-black dib  ph4-l" href="/">home</a>
+            <a class="f6 f7-l link bg-animate black-80 hover-bg-black dib  ph4-l" href="/users">drink makers</a>
+            <a class="f6 f7-l link bg-animate black-80 hover-bg-black dib  ph4-l" href="/projects" id="nav-projects">projects</a>
+            <a class="f6 f7-l link bg-animate black-80 hover-bg-black dib  ph4-l" href="#">about</a>
+            <a class="f6 f7-l link bg-animate black-80 hover-bg-black dib  ph4-l" href="#">contact</a>
+
+            {{> login-modal }}
+        </div>
+    </nav>
+
+    </header>
+
+    <div class="container project-container">
+        <section class="mw7 center sans-serif">
+            <h2 class=" fw1 ph3 ph0-l"></h2>
+
+            <article class=" b--black-10">
+                <div class="db ph3 ph0-l no-underline black" href="#0">
+                    <h1 class="f3 fw1 mt0 lh-title" id="project-title">{{projectName}}</h1>
+                    <div class="flex flex-column flex-row-ns">
+                        
+                        <div class="pr3-ns mb4 mb0-ns">
+                            <img src={{imageUrl}} class="db" id="project-img" alt="">
+                        </div>
+                        
+                        <div class="w-100 w-60-ns pl3-ns" id="project-info">
+                            <div class="project-description">{{description}}</div>
+                            <p class="f6 f5-l lh-copy">INGREDIENTS</p>
+                            <li class="ingredient">{{ingredient_1}}</li>
+                            <li class="ingredient">{{ingredient_2}}</li>
+                            <li class="ingredient">{{ingredient_3}}</li>
+                            <li class="ingredient">{{ingredient_4}}</li>
+                            <p class="f6 lh-copy mv0">By <span id="user-name">{{username}}</span></p>
+                            <br><br><br>
+
+                            {{> rating-stars}}
+                            
+                            <a id="reviews-link">Write a Review</a>
+                            <a class="f6 link dim ph3 pv2 mb2 dib black center" id="back-btn" data-id="{{id}}" href="/project/{{id}}/transaction">BACK THIS PROJECT</a>
+                        </div>
+
+                    </div>
+                </div> 
+            </article>
+        </section>
+
+
+    </div>
+
+
+</div>
+
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">TOP</button>
+
+<div class="dt dt--fixed" id="project-stats">
+    <div class="dtc tc pv2 bg-black-10" id="project-raised">TOTAL MONEY RAISED: ${{projectAmount}}</div>      
+    <div class="dtc tc pv2 bg-black-05" id="project-goal">PROJECT GOAL: ${{projectGoal}}
+    </div>
+    <div class="dtc tc pv2 bg-black-10" id="project-percent">{{projectPercent}}% FUNDED </div>
+</div>
+
+
+
+
+<div id="comments-div">
+
+
+    <div id="comments-display">
+        <h1>Reviews</h1>
+
+        <h5 id="comments-subject-display">"Tastes like Drake's tears"</h5>
+        <p>Fri Jun 22 2018 19:24:40 GMT-0700 (Pacific Daylight Time)</p>
+        <p id="comments-body-display">Don't pull up at 6AM to cuddle with me..</p>
+        <hr>
+    {{#each result}}
+
+        <h5 id="comments-subject-display">"{{this.subject}}"</h5>
+        <p>{{this.createdAt}}</p>
+        <p id="comments-body-display">{{this.comment}}</p>
+        <hr>
+
+    {{/each}}
+
+    </div>
+
+
+    <p>{{comment}}</p>
+
+    <br>
+
+
+    <div id="add-comments">
+        <form class=" black-80">
+            <div>
+                <label for="comment" class="f6 b db mb2">Subject:</label>
+                <textarea id="comment-subject" name="subject" class="db border-box hover-black  ba b--black-20 pa2 br2" aria-describedby="comment-desc"></textarea>
+
+                <label for="comment" class="f6 b db mb2">Write a review:</label>
+                <textarea id="comment-body" name="comment" class="db border-box hover-black  ba b--black-20 pa2 br2" aria-describedby="comment-desc"></textarea>
+
+                <a class="f6 link ph3 pv2 mb2 dib white bg-dark-gray" href="#0" id="submit-comment" data-id="{{this.id}}">Submit Review</a>
+
+
+            </div>
+        </form>
+    </div>
+    
+</div>
+
+

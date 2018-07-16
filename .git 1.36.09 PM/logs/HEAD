@@ -1,0 +1,3 @@
+0000000000000000000000000000000000000000 6d3cefe0ab6599ff377b1ff412244e78746b0c16 Alex Arevalo <alexarevalo@alexs-mbp.home> 1525403680 -0700	clone: from https://github.com/amareval/liri-node-app.git
+6d3cefe0ab6599ff377b1ff412244e78746b0c16 68397fb0d96b931ff0112de9bd60a14c7faa1da3 Alex Arevalo <alexarevalo@alexs-mbp.home> 1525415455 -0700	commit: got the calls working mostly, still need to add do what it says. Primary focus is adding how to add the values into the function calls
+68397fb0d96b931ff0112de9bd60a14c7faa1da3 d958d7c3312e30f77ac948554cfa93d28d985608 Alex Arevalo <alexarevalo@Alexs-MacBook-Pro.local> 1525551271 -0700	commit: Completed work. Inquirer is the best

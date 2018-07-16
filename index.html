@@ -1,117 +1,60 @@
 <!DOCTYPE html>
-
-<html lang="en-us">
-
+<html>
   <head>
-
     <meta charset="UTF-8">
-    <title>Train Time!</title>
-
-    <!-- jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <!-- Bootstrap CDN-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    <!-- Firebase Reference -->
-    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-
-    <!-- Link to Moment.js should go here -->
-  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-
-
+    <title>Alex Arevalo Bio</title>
+  <link rel="stylesheet" href="assets/css/style.css" type="text/css">
   </head>
-
   <body>
-
-    <div class="container">
-
-      <br>
-
-      <!-- Jumbotron Title -->
-      <div class="jumbotron">
-        <h1 class="text-center">Anytime is Train Time</h1>
-        <h3 class="text-center">"Choo Choo"</h3>
-      </div>
-
-
-      <!-- Train Times -->
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h2 class="panel-title">Current Train Schedule</h2>
-                </div>
-                <div class="row">
-                <!-- Columns -->
-                <div class="panel-body">
-                <div class="col-md-2 col-2">
-                    <h4 id="new-train">Train Name</h4>
-                </div>
-                <div class="col-md-2 col-2">
-                    <h4 id="new-des">Destination</h4>
-                    
-                </div>
-                <div class="col-md-2 col-2">
-                    <h4 id="new-freq">Frequency (min)</h4>
-                </div>
-                <div class="col-md-2 col-2">
-                    <h4 id="new-arrival">Next Arrival</h4>
-                </div>
-                <div class="col-md-2 col-2">
-                    <h4 id ="new-min">Minutes Away</h4>
-                </div>
-                <div class="col-md-1 col-1"></div>
-
-                <!-- Columns ^^-->
-                </div>
-
-                </div>
+    <header>
+        <div id="Top">
+            <h1 class="Name">Alex Arevalo</h1>
+            <div id="links">
+                <a href="file:///Users/alexarevalo/Documents/MyProjects/Basic-Portfolio/index.html">About</a>
+                <a href="file:///Users/alexarevalo/Documents/MyProjects/Basic-Portfolio/portfolio.html">Portfolio</a>
+                <a href="file:///Users/alexarevalo/Documents/MyProjects/Basic-Portfolio/contact.html">Contact</a>
             </div>
-          </div>
         </div>
-      </div>
-
-      <!-- Make Your Bid -->
-      <div class="row">
-          <div class = "col-lg-1"></div>
-        <div class="col-lg-10 col-md-10 col-sm-10">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">Add Train</h3>
-            </div>
-            <div class="panel-body">
-              <form>
-                <div class="form-group">
-                  <label for="bidder-name">Train Name</label>
-                  <input class="form-control" id="train-name" type="text">
-                </div>
-                <div class="form-group">
-                        <label for="bidder-name">Destination</label>
-                        <input class="form-control" id="destination-name" type="text">
-                </div>
-                <div class="form-group">
-                  <label for="bidder-price">First Train Time (HH:mm - military time)</label>
-                  <input class="form-control" id="first-train" type="text">
-                </div>
-                <div class="form-group">
-                        <label for="bidder-price">Frequency (min)</label>
-                        <input class="form-control" id="frequency" type="number">
-                </div>    
-                <button class="btn btn-primary" id="submit-bid" type="submit">Submit</button>
-              </form>
-            </div>
-          </div>
-        </div> 
-        <div class = "col-lg-1"></div> 
-      </div>
-
+    </header>
+    <div id="body">
+        <div id="bio">
+                <h2>
+                    About Me
+                    <hr id="connectmehr">
+                </h2>
+        <div id="aboutme">
+            <img class="wrap" src="assets/images/AlexArevalo.jpg" alt="Alex Arevalo's Picture">
+            <p>
+                Hey All! My background starts with being born on January 17th 1994 in Pasadena California. I grew up in a town called San Dimas on a cul-de-sac (as exciting as it gets). I grew up playing all sports but in high school played Football, Basketball, and Track. I graduated and went to USC, but originally was rejected by USC, appealed, and got in. 
+                    <br>
+                    <br>
+                I graduated and moved to Austin, Texas not knowing anyone but ended up making some of my best friends out there. Then in the beginning of 2017 I was offered a job at Snapchat and moved back to Los Angeles. I love dogs but my roommates won't let me adopt one. I've been training in mixed martial arts for about a year and half and can't get enough good food.
+            </p>
+        </div>
+        </div>
+    <div id="connectme">
+        <h3>Connect with Me</h3>
+        <br>
+            <hr class="connectmehr">
+        <br>
+        <div>
+                <a href="https://create.snapchat.com/org/e693e7d1-c027-48cc-8c03-f38081e3e039/purchase/choose-product">
+                    <img id="image1" src="assets/images/Snapchat.jpg" alt="Snapchat Logo">
+                    </a>
+                    <a href="https://www.instagram.com/alex_revalo/">
+                    <img id="image2" src="assets/images/ig-logo-email.png" alt="Instagram Logo">
+                    </a>
+                    <a href="https://github.com/">
+                    <img id="image3" src="assets/images/GitHub-Mark.png" alt="GitHub Logo">
+                    </a>
+        </div>    
+        </div>
     </div>
-
-    <!-- Script -->
-    <script src="assets/train.js"></script>
-
+    <footer id="footer">
+<p id="bottom">
+    CopyRight @ 2018 Alex Arevalo
+</p>
+    </footer>
   </body>
 
 </html>

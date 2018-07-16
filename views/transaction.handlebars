@@ -1,0 +1,52 @@
+ <header class=" black-80 tc pv2 avenir">
+
+    <nav class=" tc center navbar navbar-default navbar-fixed-top" id="myScrollspy">
+        <div class="navbar-collapse collapse">
+            <a class="f6 f7-l link bg-animate black-80 hover-bg-black dib  ph4-l fl" href="/">CANVAS</a>
+            <a class="f6 f7-l link bg-animate black-80 hover-bg-black dib  ph4-l" href="/">home</a>
+            <a class="f6 f7-l link bg-animate black-80 hover-bg-black dib  ph4-l" href="/users">drink makers</a>
+            <a class="f6 f7-l link bg-animate black-80 hover-bg-black dib  ph4-l" href="/projects" id="nav-projects">projects</a>
+            <a class="f6 f7-l link bg-animate black-80 hover-bg-black dib  ph4-l" href="#">about</a>
+            <a class="f6 f7-l link bg-animate black-80 hover-bg-black dib  ph4-l" href="#">contact</a>
+
+            {{> login-modal }}
+        </div>
+    </nav>
+</header>
+
+
+<div class="container transaction-container">
+    <h1 class="transaction-project-name">{{project_name}}</h1>
+    <p class="transaction-user-name">by {{project_user}}</p>
+
+    <div id="transaction-card">
+
+        <div class="transaction-stats dt dt--fixed">
+            <span class="dtc tc pv2 bg-black-10">Total Raised: 
+                <span id="transaction-project-amount">${{project_amount}}</span>
+            </span>
+            <span class="dtc tc pv2 bg-black-05">Project Goal: 
+                <span id="transaction-project-goal">${{project_goal}}</span>
+            </span>
+        </div>
+
+
+        <form class="transaction-form" data-amount="{{project_amount}}" data-id="{{id}}" action="/{{id}}/transaction" method="PUT">
+        <div class="form-group">
+            <label>Pledge amount</label>
+            <div class="input-dollar">
+                <input class="form-control" autocomplete="off" id="transaction-amt" placeholder="" name="transactionAmount">
+            </div>
+        </div>
+        {{!-- <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        </div> --}}
+        <button type="submit"class="btn btn-primary bg-black grow">Submit</button>
+        </form>
+    </div>
+    
+</div>

@@ -1,0 +1,105 @@
+<header class=" black-80 tc avenir">
+
+    <nav class=" tc center navbar navbar-default navbar-fixed-top" id="myScrollspy">
+        <div class="navbar-collapse collapse">
+            <a class="f6 f7-l link bg-animate black-80 hover-bg-black dib  ph4-l fl" href="">CANVAS</a>
+            <a class="f6 f7-l link bg-animate black-80 hover-bg-black dib  ph4-l" href="#" id="nav-home">home</a>
+            <a class="f6 f7-l link bg-animate black-80 hover-bg-black dib  ph4-l" href="/users">drink makers</a>
+            <a class="f6 f7-l link bg-animate black-80 hover-bg-black dib  ph4-l" href="/projects" id="nav-projects">projects</a>
+            <a class="f6 f7-l link bg-animate black-80 hover-bg-black dib  ph4-l" href="#"  id="nav-about">about</a>
+            <a class="f6 f7-l link bg-animate black-80 hover-bg-black dib  ph4-l" href="#">contact</a>
+
+            {{> login-modal }}
+        </div>
+    </nav>
+
+</header>
+
+<div class="title-header">
+    <h1 class="tc mb0 sans-serif fw1 f1" id="canvas-title">CANVAS</h1>
+    <h2 class="tc mb3 f6 fw4 i ttu tracked">'MIXOLOGY, BOTTLED'</h2>
+</div>
+
+<div class="dt dt--fixed stats-header bt bb b--silver">
+    <div class="dtc tc pv2 br b--silver">
+        TOTAL PROJECTS: {{totalProjects}}
+    </div>
+    <div class="dtc tc pv2 br b--silver">
+        TOTAL DRINK MAKERS: {{totalUsers}}
+    </div>
+    <div class="dtc tc pv2 ">
+        TOTAL MONEY RAISED: ${{totalMoneyRaised}}
+    </div>
+</div>
+
+
+<div class="jumbotron jumbotron-featured">
+    <p id="featured-title" class="mt2 mb0 sans-serif fw1 f">FEATURED</p>
+    <img src="/assets/images/louis-banner.jpeg" class="center">
+</div>
+
+
+<div class="jumbotron pts">
+    <div class="fl w-30 pa2">
+        <img src="/assets/images/pour-twist-shake.jpeg" class="pts-img">
+    </div>
+
+    <div class="fl w-70 pa2 pts-info">
+        <h3>Authentic.  Fun.  Valuable.</h3>
+        <p> 
+            Go to the store and you'll find thousands of products.  They'll list out the ingredients, why they're special: "low-fat", "organic", "authentic", etc.  For most all products although they're made up of the sum of their ingredients, those ingredients are commodities and often not sold in the store themselves.
+        </p>
+        <p>
+            But cocktails are different.  Cocktails by their very nature are combinations of other ingredients, namely alcohol, liquid which is sold in the very same store.  Moreover, at bars and restaurants that serve cocktails, the respective alcohol in each drink is listed.  
+        </p>
+        <p>
+            This should be the case for pre-bottled cocktails at the store.  It doesn't exist because existing bottled cocktails are of too low quality for existing brands to collaborate.  But what if there were a cocktail that actually made other brands product shine?  Where brands were excited to get their supply in a drink, like at the bar? 
+        </p>
+        <p>
+            Enter, DRNXMYTH.  We're a producer of creative drink productions, working with brands, bartenders and industry influencers. 
+        </p>
+        <p>
+            We'll hope our collaborate productions with spur other such efforts, creating more economic value for consumers and existing brands because they work together.  We believe it will create more value over all, but also ultimately more fun and authentic products.
+        </p>
+    </div>
+</div>
+
+{{!-- <div class="container">
+
+    <p id="projects-title" class="mt2 mb0 sans-serif fw1 f">BROWSE PROJECTS</p>
+
+    <div class="projects">
+
+        <main class="cf pa2">
+
+                        
+		<div class="fl w-50 w-40-ns ph2">
+            {{#each projectObj}}
+                {{> index-projects-thumbnails}}
+            {{/each}}
+
+		</div>
+        
+		<div class="fl w-50 w-25-ns ph2">
+			<a href="" class="pv2 grow db no-underline black"><img class="db w-100" src="https://s3-us-west-2.amazonaws.com/prnt/adam-stern-031209_960-2.jpg"></a>
+			<a href="" class="pv2 grow db no-underline black"><img class="db w-100" src="https://s3-us-west-2.amazonaws.com/prnt/hw-080411-cargo_960.jpg"></a>
+			<a href="" class="pv2 grow db no-underline black"><img class="db w-100" src="https://s3-us-west-2.amazonaws.com/prnt/hw18-240112-cc_960.jpg"> </a>
+			<a href="" class="pv2 grow db no-underline black"><img class="db w-100" src="https://s3-us-west-2.amazonaws.com/prnt/hw-residency-cargo_960.jpg"></a>
+
+		</div>
+
+		<div class="fl w-50 w-25-ns ph2">
+			<a href="" class="pv2 grow db no-underline black"><img class="db w-100" src="https://s3-us-west-2.amazonaws.com/prnt/zach-hurd-101218_960.jpg"></a>
+			<a href="" class="pv2 grow db no-underline black"><img class="db w-100" src="https://s3-us-west-2.amazonaws.com/prnt/zh170311.4.cargo_960.jpg"></a>
+			<a href="" class="pv2 grow db no-underline black"><img class="db w-100" src="https://s3-us-west-2.amazonaws.com/prnt/hwspringtour-cargo_960-1.jpg"></a>
+			<a href="" class="pv2 grow db no-underline black"><img class="db w-100" src="https://s3-us-west-2.amazonaws.com/prnt/cc-shanee_960.jpg"></a>
+			<a href="" class="pv2 grow db no-underline black"><img class="db w-100" src="https://s3-us-west-2.amazonaws.com/prnt/ZachHurd-190111s_960.jpg"></a>
+
+		</div>
+	</main>
+
+        
+
+    </div>
+
+</div> --}}
